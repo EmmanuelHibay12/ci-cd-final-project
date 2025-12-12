@@ -1,0 +1,15 @@
+# tekton/tasks.yaml
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: cleanup-task
+spec:
+  steps:
+    - name: cleanup
+      image: quay.io/openshift-pipeline/tektoncd-cli:latest
+      script: |
+        #!/bin/bash
+        echo "Starting cleanup..."
+        # Add cleanup commands here, e.g., removing a temporary directory
+        rm -rf /workspace/output
+        echo "Cleanup complete."
