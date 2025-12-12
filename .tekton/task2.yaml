@@ -1,0 +1,16 @@
+# tekton/tasks.yaml
+# ...
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: nose-test-task
+spec:
+  steps:
+    - name: run-nose-tests
+      image: python:3.9-slim # Use an image with Python
+      script: |
+        #!/bin/bash
+        pip install nose
+        # Assuming your tests are in a 'tests' directory
+        nose tests
+        echo "Nose tests executed."
