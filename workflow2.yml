@@ -1,0 +1,5 @@
+# .github/workflows/workflow.yml
+# ... inside the same 'build-and-test' job
+      - name: 🧪 Run Tests
+        run: npm run test
+        # You must define 'test' script in your package.json
